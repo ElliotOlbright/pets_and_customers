@@ -45,5 +45,10 @@ RSpec.describe Groomer do
       @jimmy.charge(45)
       expect(@groomer1.total_owed).to eq(55)
     end
+
+    it 'can return total pets of a type' do 
+      expect(@groomer1.count_pets(:cat)).to eq(2)
+      expect(@groomer1.count_pets(:dog)).to eq(2)
+    end
   end
 end

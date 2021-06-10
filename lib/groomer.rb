@@ -16,8 +16,16 @@ class Groomer
   end
 
   def total_owed
-    
-  end 
+    @customers.map { |customer| customer.outstanding_balance }.sum
+  end
+  
+  def count_pets(type)
+    @customers.map do |customer|
+      customer.pets.find_all do |pet|
+        pet.type == type
+      end
+    end.length
+  end
   
   
 end 
